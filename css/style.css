@@ -1,0 +1,281 @@
+/* ==========================================================================
+   RESEARCH HUB - MSC. VIRGILIO ARRIAGA GOMEZ
+   Diseño de Alta Fidelidad para Presentación Científica
+   ========================================================================== */
+
+:root {
+    /* Paleta Cromática: Hidrología & Sostenibilidad */
+    --primary: #0f172a;        /* Azul Noche Profundo */
+    --accent: #0284c7;         /* Azul Oceánico */
+    --accent-glow: #0ea5e9;    /* Brillo de Agua */
+    --bg-light: #f8fafc;       /* Gris Nube */
+    --text-main: #1e293b;      /* Texto de lectura */
+    --text-muted: #dde01a;     /* Texto secundario corregido */
+    --danger: #ef4444;         /* Para resaltar riesgos de sequía extrema */
+    --white: #ffffff;
+    
+    /* Sistema de Sombras (Elevación) */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    
+    /* Curvas de Animación */
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base & Tipografía */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--text-main);
+    background-color: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+/* Navbar con Efecto de Cristal Esmerilado */
+.glass-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.25rem 5%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px) saturate(180%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+    transition: var(--transition);
+}
+
+.logo {
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    font-size: 1.25rem;
+    color: var(--primary);
+}
+
+.dot { color: var(--accent); }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.875rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* Indicador de página activa estilizado */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 2px;
+    background: var(--accent);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+.btn-download {
+    background: var(--primary);
+    color: var(--white) !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    font-weight: 700 !important;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.3);
+}
+
+/* Hero Section: Inmersión Visual */
+.header-minimal {
+    position: relative;
+    padding: 220px 5% 150px;
+    text-align: center;
+    color: white;
+    /* Asegúrate de que el nombre fondo_sequia.jpg coincida con el que guardaste */
+    background-image: 
+        linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.4)), 
+        url('../assets/img/fondo_sequia.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Esto da un efecto elegante al bajar el scroll */
+}
+.badge {
+    background: rgba(14, 165, 233, 0.2);
+    color: var(--white);
+    backdrop-filter: blur(4px);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 800;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    margin: 1.5rem 0;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #7dd3fc, #0ea5e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Secciones Académicas */
+.chapter-section {
+    padding: 120px 10%;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.alt-bg { background-color: var(--bg-light); }
+
+.chapter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.step {
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.75rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.02em;
+}
+
+p {
+    font-size: 1.125rem;
+    color: var(--text-main);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+/* Tarjetas de Imagen con Estilo de Galería */
+.visual-side {
+    perspective: 1000px;
+}
+
+.image-card {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.image-card:hover {
+    transform: rotateX(2deg) rotateY(-2deg) translateY(-10px);
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    object-fit: cover;
+}
+
+.caption {
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--text-muted); /* Corregido a gris académico */
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Mini Estadísticas para Resultados Clave */
+.stats-mini {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.stats-mini li {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.stats-mini strong {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+/* Footer Profesional */
+.final-footer {
+    padding: 80px 5%;
+    text-align: center;
+    background: var(--primary);
+    color: var(--white);
+}
+
+.social {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social i {
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.6);
+    transition: var(--transition);
+}
+
+.social i:hover { color: var(--white); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .chapter-grid { gap: 50px; }
+}
+
+@media (max-width: 768px) {
+    .chapter-grid { grid-template-columns: 1fr; gap: 60px; text-align: left; }
+    .chapter-grid.reverse { direction: ltr; }
+    h1 { font-size: 2.75rem; }
+    h2 { font-size: 2rem; }
+    .glass-nav { padding: 1rem 5%; }
+    .nav-links { display: none; } /* Ocultar links en móvil para un menú burguer futuro */
+}
