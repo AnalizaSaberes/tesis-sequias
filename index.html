@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSc. Virgilio Arriaga | Research Hub</title>
+    <title>MSc. Virgilio Arriaga | Predicción de Sequías y Gestión de Cuencas</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -11,23 +11,23 @@
 <body>
 
     <nav class="glass-nav">
-        <div class="nav-content" style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
-            <span class="logo">VA<span class="dot">.</span>GOMEZ</span>
+        <div class="nav-content">
+            <span class="logo">Virgilio<span class="dot">.</span>Arriaga Gomez</span>
             <ul class="nav-links">
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#capitulo1">Cap. I</a></li>
-                <li><a href="#capitulo2">Cap. II</a></li>
-                <li><a href="#capitulo3">Cap. III</a></li>
-                <li><a href="assets/docs/Anexos_Compilado.pdf" class="btn-download" target="_blank">PDF Completo</a></li>
+                <li><a href="#capitulo1">Metodología</a></li>
+                <li><a href="#capitulo2">Modelamiento</a></li>
+                <li><a href="#capitulo3">Cartografía</a></li>
+                <li><a href="assets/docs/Anexos_Compilado.pdf" class="btn-download" target="_blank">Tesis Completa PDF</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="header-minimal">
         <div class="hero-text">
-            <span class="badge">Investigación de Maestría 2025</span>
+            <span class="badge">Investigación de Postgrado | UNCP</span>
             <h1>Predicción de Sequías mediante <br><span class="gradient-text">Modelos de Cópulas</span></h1>
-            <p>Modelamiento estocástico multivariado para la seguridad hídrica en los Andes del Sur del Perú.</p>
+            <p>Implementación de algoritmos estocásticos multivariados para la evaluación del riesgo y la seguridad hídrica en los Andes del Sur del Perú.</p>
         </div>
     </header>
 
@@ -36,18 +36,18 @@
         <section id="capitulo1" class="chapter-section">
             <div class="chapter-grid">
                 <div class="text-side">
-                    <span class="step">01. Metodología</span>
-                    <h2>Homogeneización y Calidad de Datos</h2>
-                    <p>Procesamiento de 28 estaciones meteorológicas mediante el algoritmo <strong>MICE</strong>. La validación con <strong>Curvas de Doble Masa</strong> garantizó la consistencia de las series históricas (1981-2023).</p>
+                    <span class="step">01. Integridad de Datos</span>
+                    <h2>Homogeneización y Calidad Hidrometeorológica</h2>
+                    <p>Se procesaron registros históricos de 28 estaciones validadas. Se aplicó el algoritmo <strong>MICE</strong> para la imputación de datos faltantes y la técnica de <strong>Curvas de Doble Masa</strong>, logrando coeficientes de determinación <strong>R² > 0.98</strong> que garantizan la consistencia de las series 1981-2023.</p>
                     <ul class="stats-mini">
-                        <li><strong>R² > 0.98</strong> Confiabilidad</li>
-                        <li><strong>Python</strong> MICE Library</li>
+                        <li><strong>nSPEI</strong> Índice Utilizado</li>
+                        <li><strong>28</strong> Estaciones Base</li>
                     </ul>
                 </div>
                 <div class="visual-side">
                     <div class="image-card">
-                        <img src="assets/img/VERIFICACION_HOMOGENEIZACION.png" alt="Verificación de Homogeneización">
-                        <div class="caption">Figura 1: Recuperación de linealidad y consistencia hidrológica.</div>
+                        <img src="assets/img/VERIFICACION_HOMOGENEIZACION.png" alt="Análisis de Homogeneidad">
+                        <div class="caption">Figura 1: Validación de consistencia post-homogeneización mediante CDM.</div>
                     </div>
                 </div>
             </div>
@@ -56,18 +56,18 @@
         <section id="capitulo2" class="chapter-section alt-bg">
             <div class="chapter-grid reverse">
                 <div class="text-side">
-                    <span class="step">02. Modelamiento Estocástico</span>
+                    <span class="step">02. Análisis Estocástico</span>
                     <h2>Estructura de Dependencia Bivariada</h2>
-                    <p>Uso de <strong>Cópulas Arquimedianas</strong> para capturar la dependencia no lineal entre Duración y Severidad. Los resultados revelan una fuerte dependencia de cola superior en zonas altoandinas.</p>
+                    <p>Superando los enfoques univariados, se aplicaron <strong>Cópulas Arquimedianas (Gumbel y Clayton)</strong> para capturar la correlación no lineal entre duración y severidad. Se identificó una <strong>Tau de Kendall promedio de 0.81</strong>, evidenciando que los eventos persistentes tienden a intensificarse exponencialmente.</p>
                     <div class="stats-mini">
-                        <li><strong>Gumbel</strong> Cópula</li>
-                        <li><strong>10,000</strong> Simulaciones</li>
+                        <li><strong>Gumbel</strong> Cópula Óptima</li>
+                        <li><strong>T(conjunto)</strong> < 10 años</li>
                     </div>
                 </div>
                 <div class="visual-side">
                     <div class="image-card">
-                        <img src="assets/img/Copula_Contours_ANDAHUAYLAS.png" alt="Modelo de Cópulas">
-                        <div class="caption">Figura 2: Isolíneas de probabilidad conjunta de sequía extrema.</div>
+                        <img src="assets/img/Copula_Contours_ANDAHUAYLAS.png" alt="Contornos de Cópula">
+                        <div class="caption">Figura 2: Isolíneas de probabilidad conjunta de sequía extrema (Modelo Gumbel).</div>
                     </div>
                 </div>
             </div>
@@ -76,14 +76,18 @@
         <section id="capitulo3" class="chapter-section">
             <div class="chapter-grid">
                 <div class="text-side">
-                    <span class="step">03. Resultados Espaciales</span>
-                    <h2>Cartografía de Vulnerabilidad</h2>
-                    <p>Regionalización mediante <strong>Kriging Ordinario</strong>. Identificación de núcleos críticos de riesgo en Apurímac y Cusco con probabilidades superiores al 80%.</p>
+                    <span class="step">03. Regionalización</span>
+                    <h2>Cartografía de Vulnerabilidad Integral</h2>
+                    <p>Mediante <strong>Kriging Ordinario</strong>, se mapeó el "Núcleo Andino de Riesgo". Los resultados revelan una probabilidad de sequía extrema superior al <strong>80%</strong> en las cabeceras de cuenca de Apurímac y Cusco, amenazando la recarga hídrica de los bofedales altoandinos.</p>
+                    <div class="stats-mini">
+                        <li><strong>R² = 0.92</strong> Precisión Kriging</li>
+                        <li><strong>Alcance</strong> 35.3 km</li>
+                    </ul>
                 </div>
                 <div class="visual-side">
                     <div class="image-card map-highlight">
-                        <img src="assets/img/Mapa_Integral_SurPeru_3M.png" alt="Mapa de Riesgo">
-                        <div class="caption">Figura 3: Distribución espacial de la vulnerabilidad integral (Escenario 3M).</div>
+                        <img src="assets/img/Mapa_Integral_SurPeru_3M.png" alt="Mapa Regional de Riesgo">
+                        <div class="caption">Figura 3: Distribución espacial de vulnerabilidad integral ante sequías meteorológicas.</div>
                     </div>
                 </div>
             </div>
@@ -91,13 +95,17 @@
 
     </main>
 
-    <footer class="final-footer">
-        <p><strong>Virgilio Arriaga Gomez</strong><br>Maestro en Gestión Sostenible de Cuencas Hidrográficas</p>
-        <div class="social">
-            <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/virgilio-arriaga" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-    </footer>
+   <footer class="final-footer">
+    <p><strong>Virgilio Arriaga Gomez</strong><br>Maestro en Gestión Sostenible de Cuencas Hidrográficas</p>
+    <div class="social">
+        <a href="https://www.linkedin.com/in/virgilio-arriaga-gomez-9044a62a4/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/AnalizaSaberes" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+</footer>
 
 </body>
 </html>
